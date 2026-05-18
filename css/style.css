@@ -1,6 +1,9 @@
-table tr td{
+tr td{
 	border:2px solid black;
 }
-table tr th{
+tr th{
+	border:2px solid black;
+}
+table{
 	border:2px solid black;
 }
