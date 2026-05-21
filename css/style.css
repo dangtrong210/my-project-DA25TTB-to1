@@ -1,9 +1,23 @@
-tr td{
+.container{
+	padding:0px 100px;
+}
+
+table, tr td, tr th{
+	border-collapse:collapse;
 	border:2px solid black;
 }
-tr th{
-	border:2px solid black;
+.avatar{
+	height:150px;
+	width:100px;
 }
-table{
-	border:2px solid black;
+.thongtin tr td:hover{
+	background-color:lightblue;
+}
+.thongtin{
+	width:500px;
+}
+
+.sothich li:hover{
+	background-color:lightblue;
+	
 }
