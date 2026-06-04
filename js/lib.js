@@ -1,7 +1,7 @@
 function printBCC(num)
 {
     let result = "";
-    let i = 1;
+    let i = 2;
     while(i<=10)
     {
         result += `${num} x ${i} = ${num*i} <br>`; 
