@@ -6,26 +6,18 @@ table, tr td, tr th{
 	border-collapse:collapse;
 	border:2px solid black;
 }
-
 .avatar{
 	height:150px;
 	width:100px;
 }
-
+.thongtin tr td:hover{
+	background-color:lightblue;
+}
 .thongtin{
 	width:500px;
 }
 
-.thongtin tr td:hover{
-	background-color:lightblue;
-}
-
-h4, .sothich{
-	margin: 5px 0px;
-}
-
-
 .sothich li:hover{
 	background-color:lightblue;
-	width:500px;
+	
 }
