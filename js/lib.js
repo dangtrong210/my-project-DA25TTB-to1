@@ -1,25 +1,21 @@
-function printBCC(num)
-{
+function printBCC(num) {
     let result = "";
     let i = 1;
-    while(i<=10)
-    {
-        result += `${num} x ${i} = ${num*i} <br>`; 
+    while (i <= 10) {
+        result += `${num} x ${i} = ${num * i} <br>`;
         i++;
     }
     document.getElementById("result").innerHTML = result;
 }
 
-function tinhtien()
-{
+function tinhtien() {
     const soluong = document.getElementsByClassName("soluong");
     const dongia = document.getElementsByClassName("dongia");
     const thanhtien = document.getElementsByClassName("thanhtien");
-    let i = 0, thanhtoan=0; 
-    while(i<soluong.length)
-    {
-        thanhtien[i].innerHTML=Number(dongia[i].innerHTML)*Number(soluong[i].innerHTML); 
-        thanhtoan+=Number(thanhtien[i].innerHTML);
+    let i = 0, thanhtoan = 0;
+    while (i < soluong.length) {
+        thanhtien[i].innerHTML = Number(dongia[i].innerHTML) * Number(soluong[i].innerHTML);
+        thanhtoan += Number(thanhtien[i].innerHTML);
         i++;
     }
     document.getElementById("thanhtoan").innerHTML = thanhtoan;
@@ -96,34 +92,32 @@ const products = [
         info: "Vỏ bánh giòn, nhân tôm thịt, ăn kèm rau sống",
         link: "#"
     }
-    ];
+];
 
-    function createItem(obj) {
-        const productList = document.getElementById("product-list")
-        productList.innerHTML += `
-        <div class ="col product-item">
-                    <div class="card ">
-                        <div class=" ratio ratio-1x1 product-image">
-                            <img src= "${obj.image}" alt="${obj.name}" class="card-img-top object-fit-cover">
-                        </div>
-                        <!-- info product -->
-                        <div class="card-body product-info">
-                            <h4 class="card title">${obj.name}</h4>
-                            <h6 class="text-danger">${obj.price}</h6>
-                            <p>${obj.info}</p>
-                            <a href="${obj.link}" class="btn btn-primary">Còn hàng</a>
-                        </div>
-                    </div>
-        </div>`;
+function createItem(obj) {
+    const productList = document.getElementById("product-list");
+    productList.innerHTML += `
+        <div class="card product-item">
+        <div class ="ratio ratio-1x1 product-img" >
+            <img class="image" src="${obj.image}" alt="${obj.name}" style="object-fit:cover;" >
+        </div>
+        <div class ="card-body product-info">
+            <h4 class="name">${obj.name}</h4>
+            <h5 class="price">${obj.price}</h5>
+            <p class="description">${obj.info}</p>
+            <a class="link"  href="${obj.link}">Xem chi tiet san pham</a>
+        </div>
+    </div>
+    `;
+}
+
+function AllItem(objArray) {
+    let i = 0;
+    while (i < objArray.length) {
+        createItem(objArray[i]);
+        i++;
     }
-
-    function AllItem (objArray) {
-        let i = 0;
-        while (i<objArray.length) {
-            createItem(objArray[i]);
-            i++;
-        }
-} 
+}
 
 
 /* 
