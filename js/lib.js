@@ -119,6 +119,25 @@ function AllItem(objArray) {
     }
 }
 
+function timkiem() {
+  const tukhoa = document.getElementById("tukhoa").value.trim().toLowerCase();
+  document.getElementById("product-list").innerHTML = "";
+  const ketquatimduoc = [];
+  let i = 0;
+  while (i < products.length) {
+    if (products[i].name.toLowerCase().includes(tukhoa)){
+      ketquatimduoc.push(products[i]);
+    }
+    i++;
+  }
+
+  let j = 0;
+  while(j<ketquatimduoc.length){
+    createItem(ketquatimduoc[j]);
+    j++;
+  }
+}
+
 
 /* 
 <div class ="row row-cols-1 row-cols-md-4 g-4 product-list">
