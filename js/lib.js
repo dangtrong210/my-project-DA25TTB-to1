@@ -1,3 +1,4 @@
+
 function printBCC(num) {
     let result = "";
     let i = 1;
@@ -94,7 +95,7 @@ const products = [
     }
 ];
 
-function createItem(obj) {
+function createItem(obj, index) {
     const productList = document.getElementById("product-list");
     productList.innerHTML += `
         <div class="card product-item">
@@ -105,7 +106,7 @@ function createItem(obj) {
             <h4 class="name">${obj.name}</h4>
             <h5 class="price">${obj.price}</h5>
             <p class="description">${obj.info}</p>
-            <a class="link"  href="${obj.link}">Xem chi tiet san pham</a>
+            <a class="link"  href="../html/chi-tiet-san-pham.html?id=${index}">Xem chi tiet san pham</a>
         </div>
     </div>
     `;
@@ -114,7 +115,7 @@ function createItem(obj) {
 function AllItem(objArray) {
     let i = 0;
     while (i < objArray.length) {
-        createItem(objArray[i]);
+        createItem(objArray[i], i);
         i++;
     }
 }
@@ -122,35 +123,11 @@ function AllItem(objArray) {
 function timkiem() {
   const tukhoa = document.getElementById("tukhoa").value.trim().toLowerCase();
   document.getElementById("product-list").innerHTML = "";
-  const ketquatimduoc = [];
   let i = 0;
   while (i < products.length) {
     if (products[i].name.toLowerCase().includes(tukhoa)){
-      ketquatimduoc.push(products[i]);
+      createItem(products[i], i);
     }
     i++;
   }
-
-  let j = 0;
-  while(j<ketquatimduoc.length){
-    createItem(ketquatimduoc[j]);
-    j++;
-  }
 }
-
-
-/* 
-<div class ="row row-cols-1 row-cols-md-4 g-4 product-list">
-    <div class="card product-item">
-        <div class ="ratio ratio-1x1 product-img" >
-            <img class="image" src="../assets/images/banhmi.jfif" alt="Banh mi" style="object-fit:cover;" >
-        </div>
-        <div class ="card-body product-info">
-            <h4 class="name">Banh mi</h4>
-            <h5 class="price">Gia: 15000</h5>
-            <p class="description">Gom: thit, rau, ...</p>
-            <a class="link"  href="#">Xem chi tiet san pham</a>
-        </div>
-    </div>
-</div>
-*/
